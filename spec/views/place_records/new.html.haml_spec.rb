@@ -1,11 +1,13 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "place_records/new", type: :view do
   before(:each) do
     assign(:place_record, PlaceRecord.new(
-      :lat => 1.5,
-      :lon => 1.5,
-      :comment => "MyText"
+                            lat: 1.5,
+                            lon: 1.5,
+                            comment: "MyText"
     ))
   end
 
@@ -13,7 +15,6 @@ RSpec.describe "place_records/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", place_records_path, "post" do
-
       assert_select "input[name=?]", "place_record[lat]"
 
       assert_select "input[name=?]", "place_record[lon]"

@@ -1,0 +1,9 @@
+           Prefix Verb   URI Pattern                       Controller#Action
+    place_records GET    /place_records(.:format)          place_records#index
+                  POST   /place_records(.:format)          place_records#create
+ new_place_record GET    /place_records/new(.:format)      place_records#new
+edit_place_record GET    /place_records/:id/edit(.:format) place_records#edit
+     place_record GET    /place_records/:id(.:format)      place_records#show
+                  PATCH  /place_records/:id(.:format)      place_records#update
+                  PUT    /place_records/:id(.:format)      place_records#update
+                  DELETE /place_records/:id(.:format)      place_records#destroy

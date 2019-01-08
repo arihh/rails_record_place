@@ -1,11 +1,13 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "place_records/show", type: :view do
   before(:each) do
     @place_record = assign(:place_record, PlaceRecord.create!(
-      :lat => 2.5,
-      :lon => 3.5,
-      :comment => "MyText"
+                                            lat: 2.5,
+                                            lon: 3.5,
+                                            comment: "MyText"
     ))
   end
 

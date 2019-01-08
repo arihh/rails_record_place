@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    command: bundle exec puma
+    volumes:
+      - "./:/work"
+      - "./docker_tmp/bundle_data:/bundle"
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes:
+      - "./docker_tmp/pgdata:/var/lib/postgresql/data"

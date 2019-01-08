@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Lat:
+  = @place_record.lat
+%p
+  %b Lon:
+  = @place_record.lon
+%p
+  %b Comment:
+  = @place_record.comment
+
+= link_to 'Edit', edit_place_record_path(@place_record)
+\|
+= link_to 'Back', place_records_path

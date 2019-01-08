@@ -1,0 +1,25 @@
+%h1 Listing place_records
+
+%table
+  %thead
+    %tr
+      %th Lat
+      %th Lon
+      %th Comment
+      %th
+      %th
+      %th
+
+  %tbody
+    - @place_records.each do |place_record|
+      %tr
+        %td= place_record.lat
+        %td= place_record.lon
+        %td= place_record.comment
+        %td= link_to 'Show', place_record
+        %td= link_to 'Edit', edit_place_record_path(place_record)
+        %td= link_to 'Destroy', place_record, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Place record', new_place_record_path

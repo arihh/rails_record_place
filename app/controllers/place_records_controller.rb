@@ -2,6 +2,7 @@
 
 class PlaceRecordsController < ApplicationController
   before_action :set_place_record, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery except: :create
 
   # GET /place_records
   # GET /place_records.json
@@ -39,7 +40,7 @@ class PlaceRecordsController < ApplicationController
     respond_to do |format|
       if @place_record.save
         format.html { redirect_to @place_record, notice: "PlaceRecord was successfully created." }
-        format.json { render :show, status: :created, location: @place_record }
+        format.json { render json: {status: :ok}, status: :created, location: @place_record }
       else
         format.html { render :new }
         format.json { render json: @place_record.errors, status: :unprocessable_entity }

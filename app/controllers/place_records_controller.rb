@@ -7,10 +7,10 @@ class PlaceRecordsController < ApplicationController
   # GET /place_records
   # GET /place_records.json
   def index
-    @place_records = PlaceRecord.all
+    @place_records = PlaceRecord.order(created_at: :desc)
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @place_records.map(&:to_json) }
+      format.json { render json: @place_records.to_json }
     end
   end
 

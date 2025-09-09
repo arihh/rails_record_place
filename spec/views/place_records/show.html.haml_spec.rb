@@ -17,4 +17,9 @@ RSpec.describe "place_records/show", type: :view do
     expect(rendered).to match(/3.5/)
     expect(rendered).to match(/MyText/)
   end
+  
+  it "displays memo label in Japanese" do
+    render
+    expect(rendered).to match(/メモ:/)
+  end
 end

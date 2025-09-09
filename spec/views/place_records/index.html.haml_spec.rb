@@ -24,4 +24,9 @@ RSpec.describe "place_records/index", type: :view do
     assert_select "tr>td", text: 3.5.to_s, count: 2
     assert_select "tr>td", text: "MyText".to_s, count: 2
   end
+  
+  it "displays memo header in Japanese" do
+    render
+    expect(rendered).to match(/メモ/)
+  end
 end
